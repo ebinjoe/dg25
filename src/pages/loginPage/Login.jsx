@@ -1,8 +1,4 @@
 import React from "react";
-// import { Routes, Route } from "react-router-dom";
-// import AdminLogin from "./components/adminLogin"
-// import ReviewerLogin from "./components/reviewerLogin"
-// import UserLogin from "./components/userLogin"
 import Collage from "../../images/nature.jpg";
 import LoginTab from "./LoginTabs/loginTab";
 

@@ -1,11 +1,6 @@
-import React from 'react'
-import ReivewerLoginTab from "../LoginTabs/reviewerLoginTab"
+import React from "react";
 const reviewerLogin = () => {
-  return (
-    <div>
-      <ReivewerLoginTab/>
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default reviewerLogin
+export default reviewerLogin;

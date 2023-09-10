@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { toast } from "react-toastify";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { API_ENDPOINT } from "../../../constant/constant";
 import { useNavigate } from "react-router-dom";
 const AdminLoginPage = () => {
@@ -18,28 +19,10 @@ const AdminLoginPage = () => {
         (response) => {
           localStorage.setItem("Admintoken", response.data.token);
           if (response.data.status === true) {
-            toast.success("login successful!", {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.success("Login successful!");
             navigate("/adminLogin");
           } else {
-            toast.error("Error in login!", {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.error("Error in login!");
             setlogin2alert(true);
           }
           console.log(response);
@@ -53,7 +36,7 @@ const AdminLoginPage = () => {
   return (
     <div className="login-page-container">
       <div className="login-con">
-        <h2>Guest Login</h2>
+        <h2>admin Login</h2>
 
         <div className="login-input-con new">
           <input

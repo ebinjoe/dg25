@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { API_ENDPOINT } from "../../../constant/constant";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const ReviewLoginPage = () => {
   const [reviewerloginEmail, setreviewerloginUpEmail] = useState("");
   const [reviewerloginPassword, setreviewerloginPassword] = useState("");
@@ -18,16 +18,7 @@ const ReviewLoginPage = () => {
       .then(
         (response) => {
           if (response.data.status === true) {
-            toast.success("login successful!", {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.success("login successful!");
             localStorage.setItem("Reviewer-email", reviewerloginEmail);
             localStorage.setItem("Reviewertoken", response.data.token);
 
@@ -37,16 +28,7 @@ const ReviewLoginPage = () => {
               },
             });
           } else {
-            toast.error("Error in login!", {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.error("Error in login!");
             setlogin1alert(true);
           }
         },
@@ -72,9 +54,6 @@ const ReviewLoginPage = () => {
             placeholder="Password"
             onChange={(e) => setreviewerloginPassword(e.target.value)}
           />
-          <span>
-            Already a User <NavLink to="/committee/register">Sign Up</NavLink>
-          </span>
           {login1alert ? (
             <strong style={{ color: "red" }}>Wrong Details</strong>
           ) : (

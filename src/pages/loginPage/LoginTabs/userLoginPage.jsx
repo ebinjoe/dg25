@@ -14,28 +14,10 @@ const UserLoginPage = () => {
         (response) => {
           localStorage.setItem("Usertoken", response.data.token);
           if (response.data.status === true) {
-            toast.success("login successful!", {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.success("login successful!");
             navigate("/UserLogin");
           } else {
-            toast.error("Error in login!", {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.error("Error in login!");
             setloginalert(true);
           }
         },
@@ -52,7 +34,7 @@ const UserLoginPage = () => {
   return (
     <div className="login-page-container">
       <div className="login-con">
-        <h2>Admin Login</h2>
+        <h2>guest Login</h2>
 
         <div className="login-input-con">
           <input

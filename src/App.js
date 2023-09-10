@@ -1,12 +1,17 @@
 import "./App.css";
 import Landing from "./pages/landingPage/Landing";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Login from "./pages/loginPage/Login";
 import Navbar from "./pages/landingPage/components/navbar";
+import AdminLogin from "./pages/loginPage/components/adminLogin";
+import ReviewerLogin from "./pages/loginPage/components/reviewerLogin";
+import UserLogin from "./pages/loginPage/components/userLogin";
+import LogoutNavbar from "./pages/loginPage/components/LogoutNavbar";
 import UserLoginPage from "./pages/loginPage/LoginTabs/userLoginPage";
 import UserSignUpPage from "./pages/loginPage/LoginTabs/userSignUpPage";
 import ReviewLoginPage from "./pages/loginPage/LoginTabs/ReviewLoginPage";
-import ReviewerSignUpPage from "./pages/loginPage/LoginTabs/ReviewerSignUpPage";
 import AdminLoginPage from "./pages/loginPage/LoginTabs/AdminLoginPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -24,15 +29,16 @@ function App() {
               path="/committee/login"
               element={<ReviewLoginPage />}
             />
-            <Route
-              exact
-              path="/committee/register"
-              element={<ReviewerSignUpPage />}
-            />
             <Route exact path="/admin/login" element={<AdminLoginPage />} />
+          </Route>
+          <Route element={<LogoutNavbar />}>
+            <Route exact path="/adminLogin" element={<AdminLogin />} />
+            <Route exact path="/ReviewerLogin" element={<ReviewerLogin />} />
+            <Route exact path="/UserLogin" element={<UserLogin />} />
           </Route>
         </Routes>
       </BrowserRouter>
+      <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
 }
