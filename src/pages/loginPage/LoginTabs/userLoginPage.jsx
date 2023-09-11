@@ -50,11 +50,6 @@ const UserLoginPage = () => {
           <span>
             Already a User <NavLink to="/author/register">Sign Up</NavLink>
           </span>
-          {loginalert ? (
-            <strong style={{ color: "red" }}>Wrong Details</strong>
-          ) : (
-            ""
-          )}
           <button onClick={userlogin}>Login</button>
         </div>
       </div>

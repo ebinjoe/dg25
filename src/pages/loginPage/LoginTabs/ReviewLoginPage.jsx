@@ -54,11 +54,6 @@ const ReviewLoginPage = () => {
             placeholder="Password"
             onChange={(e) => setreviewerloginPassword(e.target.value)}
           />
-          {login1alert ? (
-            <strong style={{ color: "red" }}>Wrong Details</strong>
-          ) : (
-            ""
-          )}
           <button onClick={Reviewerlogin}>Login</button>
         </div>
       </div>

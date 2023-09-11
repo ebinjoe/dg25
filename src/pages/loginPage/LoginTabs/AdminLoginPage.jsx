@@ -49,12 +49,6 @@ const AdminLoginPage = () => {
             placeholder="Password"
             onChange={(e) => setadminloginPassword(e.target.value)}
           />
-
-          {login2alert ? (
-            <strong style={{ color: "red" }}>Wrong Details</strong>
-          ) : (
-            ""
-          )}
           <button onClick={adminLogin}>Login</button>
         </div>
       </div>
