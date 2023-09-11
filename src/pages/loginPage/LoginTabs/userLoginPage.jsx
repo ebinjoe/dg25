@@ -18,7 +18,6 @@ const UserLoginPage = () => {
             navigate("/UserLogin");
           } else {
             toast.error("Error in login!");
-            setloginalert(true);
           }
         },
         (error) => {
@@ -29,7 +28,6 @@ const UserLoginPage = () => {
 
   const [loginEmail, setloginUpEmail] = useState("");
   const [loginPassword, setloginPassword] = useState("");
-  const [loginalert, setloginalert] = useState(false);
   const navigate = useNavigate();
   return (
     <div className="login-page-container">
