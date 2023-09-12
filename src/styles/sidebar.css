@@ -1,0 +1,26 @@
+/* styles.css */
+
+/* Style for the sidebar container */
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background-color: black;
+  overflow-y: scroll;
+}
+
+/* Style for each square box */
+.box {
+  width: 80px;
+  height: 100px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for the circle icon */
+.icon {
+    width: 30px;
+    height: 30px;
+  color: white;
+}
