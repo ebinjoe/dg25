@@ -54,8 +54,10 @@ time {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "roboto-condensed", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Montserrat:wght@100;200;300&display=swap');
 p {
   margin: 0 !important;
 }
@@ -67,7 +69,6 @@ p {
   --darkGray: #404041;
 }
 h1 {
-  font-family: "roboto-condensed", "Arial Narrow Bold", Arial, sans-serif;
   font-weight: 800 !important;
   color: var(--green);
   font-size: 30px !important;
@@ -75,7 +76,6 @@ h1 {
 
 a {
   font-weight: 800 !important;
-  font-family: "roboto-condensed", "Arial Narrow Bold", Arial, sans-serif;
   color: var(--green) !important;
   font-size: 14px !important;
   text-decoration: none !important;

@@ -6,12 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from "./pages/loginPage/Login";
 import Navbar from "./pages/landingPage/components/navbar";
 import AdminLogin from "./pages/loginPage/components/adminLogin";
-import ReviewerLogin from "./pages/loginPage/components/reviewerLogin";
+import StudentLogin from "./pages/loginPage/components/StudentLogin";
 import UserLogin from "./pages/loginPage/components/userLogin";
 import LogoutNavbar from "./pages/loginPage/components/LogoutNavbar";
 import UserLoginPage from "./pages/loginPage/LoginTabs/userLoginPage";
 import UserSignUpPage from "./pages/loginPage/LoginTabs/userSignUpPage";
-import ReviewLoginPage from "./pages/loginPage/LoginTabs/ReviewLoginPage";
+import ReviewLoginPage from "./pages/loginPage/LoginTabs/StudentLoginPage";
 import AdminLoginPage from "./pages/loginPage/LoginTabs/AdminLoginPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -33,7 +33,7 @@ function App() {
           </Route>
           <Route element={<LogoutNavbar />}>
             <Route exact path="/adminLogin" element={<AdminLogin />} />
-            <Route exact path="/ReviewerLogin" element={<ReviewerLogin />} />
+            <Route exact path="/StudentLogin" element={<StudentLogin />} />
             <Route exact path="/UserLogin" element={<UserLogin />} />
           </Route>
         </Routes>

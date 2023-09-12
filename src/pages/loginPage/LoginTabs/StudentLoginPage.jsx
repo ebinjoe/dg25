@@ -4,27 +4,27 @@ import axios from "axios";
 import { API_ENDPOINT } from "../../../constant/constant";
 import { useNavigate } from "react-router-dom";
 const ReviewLoginPage = () => {
-  const [reviewerloginEmail, setreviewerloginUpEmail] = useState("");
-  const [reviewerloginPassword, setreviewerloginPassword] = useState("");
+  const [StudentloginEmail, setStudentloginUpEmail] = useState("");
+  const [StudentloginPassword, setStudentloginPassword] = useState("");
   const [login1alert, setlogin1alert] = useState(false);
   const navigate = useNavigate();
 
-  function Reviewerlogin() {
+  function Studentlogin() {
     axios
-      .post(`${API_ENDPOINT}/reviewer/login`, {
-        email: reviewerloginEmail,
-        password: reviewerloginPassword,
+      .post(`${API_ENDPOINT}/students/login`, {
+        email: StudentloginEmail,
+        password: StudentloginPassword,
       })
       .then(
         (response) => {
           if (response.data.status === true) {
             toast.success("login successful!");
-            localStorage.setItem("Reviewer-email", reviewerloginEmail);
-            localStorage.setItem("Reviewertoken", response.data.token);
+            localStorage.setItem("Student-email", StudentloginEmail);
+            localStorage.setItem("Studenttoken", response.data.token);
 
-            navigate("/ReviewerLogin", {
+            navigate("/StudentLogin", {
               state: {
-                ReviewerEmail: reviewerloginEmail,
+                StudentEmail: StudentloginEmail,
               },
             });
           } else {
@@ -47,14 +47,14 @@ const ReviewLoginPage = () => {
           <input
             type="email"
             placeholder="email"
-            onChange={(e) => setreviewerloginUpEmail(e.target.value)}
+            onChange={(e) => setStudentloginUpEmail(e.target.value)}
           />
           <input
             type="password"
             placeholder="Password"
-            onChange={(e) => setreviewerloginPassword(e.target.value)}
+            onChange={(e) => setStudentloginPassword(e.target.value)}
           />
-          <button onClick={Reviewerlogin}>Login</button>
+          <button onClick={Studentlogin}>Login</button>
         </div>
       </div>
     </div>

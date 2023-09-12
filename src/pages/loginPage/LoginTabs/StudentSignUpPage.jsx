@@ -3,28 +3,28 @@ import axios from "axios";
 import { API_ENDPOINT } from "../../../constant/constant";
 import { NavLink } from "react-router-dom";
 
-const ReviewerSignUpPage = () => {
-  const [signUpReviewerUserName, setSignUpReviewerUserName] = useState("");
-  const [signupReviewerEmail, setSignUpReviewerEmail] = useState("");
-  const [signUpReviewerPassword, setSignUpReviewerPassword] = useState("");
+const StudentSignUpPage = () => {
+  const [signUpStudentUserName, setSignUpStudentUserName] = useState("");
+  const [signupStudentEmail, setSignUpStudentEmail] = useState("");
+  const [signUpStudentPassword, setSignUpStudentPassword] = useState("");
 
-  const [reivewerSignUpTost, setReviewerSignUptoast] = useState(false);
-  const [reivewerSignUpTost1, setReviewerSignUptoast1] = useState(false);
+  const [reivewerSignUpTost, setStudentSignUptoast] = useState(false);
+  const [reivewerSignUpTost1, setStudentSignUptoast1] = useState(false);
 
-  function ReviewverSignup() {
+  function StudentSignup() {
     axios
-      .post(`${API_ENDPOINT}/reviewer/signup`, {
-        userName: signUpReviewerUserName,
-        password: signUpReviewerPassword,
-        email: signupReviewerEmail,
-        confirmPassword: signUpReviewerPassword,
+      .post(`${API_ENDPOINT}/students/signup`, {
+        userName: signUpStudentUserName,
+        password: signUpStudentPassword,
+        email: signupStudentEmail,
+        confirmPassword: signUpStudentPassword,
       })
       .then(
         (response) => {
           if (response.data.status === true) {
-            setReviewerSignUptoast(true);
+            setStudentSignUptoast(true);
           } else {
-            setReviewerSignUptoast1(true);
+            setStudentSignUptoast1(true);
           }
         },
         (error) => {
@@ -41,17 +41,17 @@ const ReviewerSignUpPage = () => {
           <input
             type="text"
             placeholder="User Name"
-            onChange={(e) => setSignUpReviewerUserName(e.target.value)}
+            onChange={(e) => setSignUpStudentUserName(e.target.value)}
           />
           <input
             type="email"
             placeholder="email"
-            onChange={(e) => setSignUpReviewerEmail(e.target.value)}
+            onChange={(e) => setSignUpStudentEmail(e.target.value)}
           />
           <input
             type="password"
             placeholder="Password"
-            onChange={(e) => setSignUpReviewerPassword(e.target.value)}
+            onChange={(e) => setSignUpStudentPassword(e.target.value)}
           />
           {reivewerSignUpTost ? (
             <strong style={{ color: "green" }}>Sign up Sucessfull</strong>
@@ -64,14 +64,14 @@ const ReviewerSignUpPage = () => {
             ""
           )}
           <p>
-            Already a reviewer{" "}
+            Already a Student{" "}
             <NavLink to="/committee/login">Login Here</NavLink>
           </p>
-          <button onClick={ReviewverSignup}>Sign UP</button>
+          <button onClick={StudentSignup}>Sign UP</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default ReviewerSignUpPage;
+export default StudentSignUpPage;
