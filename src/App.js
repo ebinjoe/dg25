@@ -13,6 +13,7 @@ import UserLoginPage from "./pages/loginPage/LoginTabs/userLoginPage";
 import UserSignUpPage from "./pages/loginPage/LoginTabs/userSignUpPage";
 import ReviewLoginPage from "./pages/loginPage/LoginTabs/StudentLoginPage";
 import AdminLoginPage from "./pages/loginPage/LoginTabs/AdminLoginPage";
+import About from "./pages/about/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/author/login" element={<UserLoginPage />} />
             <Route exact path="/author/register" element={<UserSignUpPage />} />
+            <Route exact path="/about" element={<About />} />
             <Route
               exact
               path="/committee/login"

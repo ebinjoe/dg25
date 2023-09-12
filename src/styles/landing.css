@@ -25,33 +25,39 @@
     cursor: pointer;
 }
 .content{
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0px 220px;
     margin-top: 23px;
 }
 .blue{
     color: #069; 
     margin-left: 32px !important; 
-    margin-top: 36px !important;
+  
 }
 .margin{
-    margin-left: 166px;
-    margin-top: 8px;
+    margin-top: 12px;
 }
 .ml2{
     margin-left: 12px;
 }
-.input-ieee{
+.input-ieee {
     width: 338px;
+    padding: 0px 10px;
     height: 36px;
+    border-radius: 5px;
     background-color: #e5e5e5;
     border: 1px solid #e5e5e5;
-
 }
 .nav-set {
     display: flex;
     justify-content: space-between;
     padding-right: 10px;
 }
+.nav-set {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    margin-left: 97px;}
 
 .logo-data-img {
     background-color: var(--blue);

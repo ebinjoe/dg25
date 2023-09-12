@@ -8,11 +8,7 @@ const navbar = () => {
         <div className="nav-set">
           <div className="logo-data">
             <div className="flex">
-              <div className="ml">IEEE.org</div>
-              <div className="ml">IEEE xplore Digital library</div>
-              <div className="ml">IEEE standards</div>
-              <div className="ml">IEEE spectrum</div>
-              <div className="ml">More sites</div>
+             <h1>Northwest Project Explorer</h1>
             </div>
           </div>
 
@@ -24,7 +20,15 @@ const navbar = () => {
             </li>
             <li>
               {" "}
+              <NavLink to="/about">ABOUT</NavLink>
+            </li>
+            <li>
+              {" "}
               <NavLink to="/Login">LOGIN</NavLink>
+            </li>
+            <li>
+              {" "}
+              <NavLink to="/">HELP</NavLink>
             </li>
           </div>
         </div>
