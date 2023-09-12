@@ -151,3 +151,10 @@ label {
     outline: none;
     margin: 5px;
   }
+  .nav{
+    background-color: black;
+    color: white;
+  }
+  .flex{
+    display: flex;
+  }

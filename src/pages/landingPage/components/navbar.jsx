@@ -4,13 +4,16 @@ import { NavLink, Outlet } from "react-router-dom";
 const navbar = () => {
   return (
     <div className="nav-constainer">
-      <div className="nav-header">
+      <div className="nav-header nav">
         <div className="nav-set">
           <div className="logo-data">
-            <div className="logo-data-img">
-              <img src={logo} alt="logo" />
+            <div className="flex">
+              <div className="ml">IEEE.org</div>
+              <div className="ml">IEEE xplore Digital library</div>
+              <div className="ml">IEEE standards</div>
+              <div className="ml">IEEE spectrum</div>
+              <div className="ml">More sites</div>
             </div>
-            <h1>Welcome</h1>
           </div>
 
           <div className="lsit-set">

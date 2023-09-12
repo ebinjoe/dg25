@@ -16,10 +16,37 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 220px;
-    height: 80px;
+    width: 637px;
+    height: 50px;
 }
 
+.ml{
+    padding-left: 35px;
+    cursor: pointer;
+}
+.content{
+    justify-content: space-around;
+    margin-top: 23px;
+}
+.blue{
+    color: #069; 
+    margin-left: 32px !important; 
+    margin-top: 36px !important;
+}
+.margin{
+    margin-left: 166px;
+    margin-top: 8px;
+}
+.ml2{
+    margin-left: 12px;
+}
+.input-ieee{
+    width: 338px;
+    height: 36px;
+    background-color: #e5e5e5;
+    border: 1px solid #e5e5e5;
+
+}
 .nav-set {
     display: flex;
     justify-content: space-between;
