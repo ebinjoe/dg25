@@ -14,7 +14,6 @@ const UserProfile = () => {
 const [userProfile , setuserProfile] = useState("")
 console.log(userProfile , "iugiogig")
   useEffect(() => {
-    // GetPro();
 
     axios
       .get(`${API_ENDPOINT}/get/details`, myUsertoken)
