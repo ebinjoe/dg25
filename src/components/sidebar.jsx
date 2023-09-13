@@ -12,7 +12,7 @@ import {
   FaQuestionCircle,
 } from "react-icons/fa";
 const Sidebar = () => {
-  const isAdmin = window.location.pathname === "/adminLogin";
+  const isAdmin = localStorage.getItem("userType")
   const sidebarAdmin = [
     {
       label: "Dashboard",
@@ -97,7 +97,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      {isAdmin ? (
+      {isAdmin == "Admin" ? (
         <>
           {sidebarAdmin.map((item, index) => (
             <Link to={item.path} key={index} className="box">

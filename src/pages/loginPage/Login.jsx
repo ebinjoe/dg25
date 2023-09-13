@@ -1,5 +1,5 @@
 import React from "react";
-import Collage from "../../images/nature.jpg";
+import Collage from "../../images/nwmsubackground.jpg";
 import LoginTab from "./LoginTabs/loginTab";
 
 const Login = () => {

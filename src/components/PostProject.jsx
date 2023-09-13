@@ -1,14 +1,10 @@
 import React from "react";
 import "./sidebarLayout.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
 import "./projectForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { fetchApi } from "../Utils/Request";
-// import * as XLSX from "xlsx";
 import axios from "axios";
 import { API_ENDPOINT } from "../constant/constant";
 import Sidebar from "./sidebar";
@@ -25,8 +21,8 @@ const formDetails = {
 const PostProject = () => {
   const [formData, setFormData] = useState({ ...formDetails });
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState(false);
-  const [items, setItems] = useState([]);
+  const [ setErrors] = useState(false);
+
   const [pdfFile, setPdfFile] = useState("");
   const [studentHeader] = useState({
     headers: {

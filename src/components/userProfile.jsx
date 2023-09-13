@@ -5,19 +5,41 @@ import Sidebar from "./sidebar";
 import axios from "axios";
 import { API_ENDPOINT } from "../constant/constant";
 const UserProfile = () => {
-  const [myUsertoken] = useState({
+
+  let userType = localStorage.getItem("userType");
+
+  console.log(userType , "userType")
+  const [studentHeader] = useState({
     headers: {
       token: localStorage.getItem("Studenttoken"),
     },
   });
+  const [guestHeader] = useState({
+    headers: {
+      token: localStorage.getItem("Usertoken"),
+    },
+  });
 
 const [userProfile , setuserProfile] = useState("")
-console.log(userProfile , "iugiogig")
-  useEffect(() => {
 
-    axios
-      .get(`${API_ENDPOINT}/get/details`, myUsertoken)
-      .then((response) => setuserProfile(response));
+
+let userDetail = userProfile?.data?.data?.user
+
+  useEffect(() => {
+if(userType=="student"){
+  axios
+  .get(`${API_ENDPOINT}/students/get/details`, studentHeader)
+  .then((response) => setuserProfile(response));
+}
+else if(userType=="guestUser"){
+  axios
+.get(`${API_ENDPOINT}/get/details`, guestHeader)
+.then((response) => setuserProfile(response));
+}
+else{
+  setuserProfile("")
+}
+
   }, []);
   return (
     <div>
@@ -31,11 +53,9 @@ console.log(userProfile , "iugiogig")
               {/* Add your profile image here */}
             </div>
             <div className="profile-details">
-              <h3>Name: User Name</h3>
-              <p>Bio: Your bio goes here.</p>
-              <p>Email: your.email@example.com</p>
-              <p>More Details: Additional details about you.</p>
-              <p>About Me: Information about yourself.</p>
+              <h3>Name: {userDetail?.firstName} {userDetail?.lastName}</h3>
+              <p>Email: {userDetail?.email}</p>
+           
               <br/>
               {/* <button>Signout</button>  <button>Setting</button> */}
             </div>

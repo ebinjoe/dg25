@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../images/welcome_log.jpg";
+import logo from "../../../images/NWMSU_logo.png";
 import { NavLink, Outlet } from "react-router-dom";
 const LogoutNavbar = () => {
   return (

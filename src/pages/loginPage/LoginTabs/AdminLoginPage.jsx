@@ -20,6 +20,8 @@ const AdminLoginPage = () => {
           localStorage.setItem("Admintoken", response.data.token);
           if (response.data.status === true) {
             toast.success("Login successful!");
+            localStorage.setItem("Admintoken", response.data.token);
+            localStorage.setItem("userType", "Admin");
             navigate("/adminLogin");
           } else {
             toast.error("Error in login!");
