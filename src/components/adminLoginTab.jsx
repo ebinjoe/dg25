@@ -72,6 +72,8 @@ export default function FullWidthTabs() {
   // const [checkDisable, setCheckdisble] = useState(false);
 
   const [tableDetails, setTableDetails] = useState([]);
+
+  console.log(tableDetails , "uihiuhgooigoi")
   const [assignPaper, setAssignPaper] = useState([]);
   const [reviewerEmail, setReviewerDetails] = useState([]);
   const [assigned, setAssigned] = useState({ status: false, value: {} });
@@ -148,28 +150,28 @@ export default function FullWidthTabs() {
   useEffect(() => {
     GetPro();
 
-    axios
-      .get(`${API_ENDPOINT}/admin/reviewer`, myadminheader)
-      .then((response) => setReviewerDetails(response.data));
+    // axios
+    //   .get(`${API_ENDPOINT}/admin/approve`, myadminheader)
+    //   .then((response) => setReviewerDetails(response.data));
   }, []);
 
   const GetPro = () => {
     axios
-      .get(`${API_ENDPOINT}/admin/projects`, myadminheader)
+      .get(`${API_ENDPOINT}/admin/all/project`, myadminheader)
       .then((response) => {
-        let array = response.data.project.filter((e) => e.document !== "");
+        let array = response?.data?.project?.filter((e) => e.document !== "");
         let assign = [];
         let evaluate = [];
-        array.forEach((e) => {
+        array?.forEach((e) => {
           if (e.reviewerApproval.length > 0) {
             evaluate.push(e);
           } else {
             assign.push(e);
           }
         });
-        setAssignPaper(assign);
-        setEvaluatePaper(evaluate);
-        setTableDetails(response.data.project.filter((e) => e.document !== ""));
+        // setAssignPaper(assign);
+        // setEvaluatePaper(evaluate);
+        setTableDetails(response.data.data);
       });
   };
   // const handleCheck = (product) => {
@@ -283,7 +285,7 @@ export default function FullWidthTabs() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {evaluatePaper
+                {tableDetails
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row) => {
                     return (
@@ -293,11 +295,11 @@ export default function FullWidthTabs() {
                         tabIndex={-1}
                         key={row.code}
                       >
-                        <TableCell>{row.userName}</TableCell>
+                        <TableCell>{row.userId}</TableCell>
                         {/* now keyword is array needed to be mapped ebin*/}
 
                         {/* <TableCell >{row.keyword}</TableCell> */}
-                        <TableCell>{row.title}</TableCell>
+                        <TableCell>{row.projectTitle}</TableCell>
                         <TableCell>
                           {" "}
                           <button

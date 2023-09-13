@@ -1,8 +1,25 @@
-import React from "react";
+import React , { useEffect , useState}from "react";
 import "./UserProfile.css"; // Import your CSS file here
 import "./sidebarLayout.css";
 import Sidebar from "./sidebar";
+import axios from "axios";
+import { API_ENDPOINT } from "../constant/constant";
 const UserProfile = () => {
+  const [myUsertoken] = useState({
+    headers: {
+      token: localStorage.getItem("Studenttoken"),
+    },
+  });
+
+const [userProfile , setuserProfile] = useState("")
+console.log(userProfile , "iugiogig")
+  useEffect(() => {
+    // GetPro();
+
+    axios
+      .get(`${API_ENDPOINT}/get/details`, myUsertoken)
+      .then((response) => setuserProfile(response));
+  }, []);
   return (
     <div>
       <div className="sidebar">
@@ -21,7 +38,7 @@ const UserProfile = () => {
               <p>More Details: Additional details about you.</p>
               <p>About Me: Information about yourself.</p>
               <br/>
-              <button>Signout</button>  <button>Setting</button>
+              {/* <button>Signout</button>  <button>Setting</button> */}
             </div>
           </div>
         </div>
