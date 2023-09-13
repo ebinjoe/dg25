@@ -103,7 +103,7 @@ export default function FullWidthTabs() {
   // };
 
   const columns = [
-    { id: "name", label: "Authors Name" },
+    { id: "name", label: "Project Summery" },
     { id: "title", label: "title" },
     {
       id: "keyword",
@@ -296,7 +296,7 @@ export default function FullWidthTabs() {
                         tabIndex={-1}
                         key={row.code}
                       >
-                        <TableCell>{row.userId}</TableCell>
+                        <TableCell>{row.projectSummary}</TableCell>
                         {/* now keyword is array needed to be mapped ebin*/}
 
                         {/* <TableCell >{row.keyword}</TableCell> */}
