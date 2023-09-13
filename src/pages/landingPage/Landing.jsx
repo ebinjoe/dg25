@@ -11,12 +11,10 @@ import {
   FaYoutube,
   FaShareAlt,
 } from "react-icons/fa";
-import Sidebar from "./components/sidebar";
 
 const Landing = () => {
   return (
     <div>
-      <Sidebar/>
       <div className="wrapper-div">
         <div>
           <div className="flex content">

@@ -1,0 +1,15 @@
+/* userlogin.css */
+/* Style the sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80px; /* Adjust the width as needed */
+}
+
+/* Style the children content */
+.children {
+  margin-left: 80px; /* Adjust the margin to leave space for the sidebar */
+  /* Add any other styles you need for the children content */
+}

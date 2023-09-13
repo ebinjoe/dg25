@@ -1,0 +1,48 @@
+/* WelcomeHeroPage.css */
+
+/* Style the hero container */
+.hero {
+    background-image: url("https://images.unsplash.com/photo-1559056961-1f4dbbf9d36a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"); /* Add your hero image */
+    background-size: cover;
+    background-position: center;
+    height: 650px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Style the hero content */
+  .hero-content {
+    text-align: center;
+    color: #fff; /* Text color */
+  }
+  
+  /* Style the heading */
+  .hero-heading {
+    font-size: 40px;
+    margin-bottom: 40px; /* Add spacing between heading and text */
+  }
+  
+  /* Style the text */
+  .hero-text {
+    font-size: 30px;
+    margin-bottom: 40px; /* Add spacing between text and button */
+  }
+  
+  /* Style the button */
+  .hero-button {
+    margin-top: 40px;
+    background-color:var(--green); /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color:var(--green); /* Button background color on hover */
+  }
+  

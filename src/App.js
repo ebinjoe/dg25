@@ -15,6 +15,9 @@ import ReviewLoginPage from "./pages/loginPage/LoginTabs/StudentLoginPage";
 import AdminLoginPage from "./pages/loginPage/LoginTabs/AdminLoginPage";
 import About from "./pages/about/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserProfile from "./components/userProfile";
+import PostProject from "./components/PostProject";
+import ReviewProject from "./components/ReviewProject";
 function App() {
   return (
     <div className="App">
@@ -35,8 +38,11 @@ function App() {
           </Route>
           <Route element={<LogoutNavbar />}>
             <Route exact path="/adminLogin" element={<AdminLogin />} />
+            <Route exact path="/ReviewProject" element={<ReviewProject/>} />
             <Route exact path="/StudentLogin" element={<StudentLogin />} />
             <Route exact path="/UserLogin" element={<UserLogin />} />
+            <Route exact path="/Account" element={<UserProfile />} />
+            <Route exact path="/PostProject" element={<PostProject />} />
           </Route>
         </Routes>
       </BrowserRouter>

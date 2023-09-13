@@ -1,0 +1,71 @@
+/* UserProfile.css */
+.profile-container {
+  width: 90vw;
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green);
+  border: 2px solid #333; /* Add border to the entire grid */
+}
+
+.profile-cover {
+  width: 100%;
+  height: 300px; /* Adjust the height as needed */
+  background-image: url('https://images.unsplash.com/photo-1559056961-1f4dbbf9d36a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7; /* Adjust opacity as needed */
+}
+.profile-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  text-align: center;
+  background-color: white;
+  border: 2px solid #333; /* Add border to the entire grid */
+  padding: 20px; /* Add padding to create space between border and content */
+  border-radius: 10px; /* Rounded corners for the grid */
+}
+
+.profile-image {
+  background-image: url('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #ccc; /* Add your profile image background here */
+  border: 2px solid #333; /* Add border to the profile image */
+}
+
+.profile-details {
+ 
+  font-size: 14px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+ 
+  font-size: 24px;
+  background-color:  var(--green); /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add additional styling as needed */

@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+when you log in as user guset
+
+static image on initial load
+
+in sidebar
+1st will be post project in this we need mui table ui
+2nd will be user profile in this we need basic user profile
+
+
+nwconf2023-fe  frontend repo
+
+> login >  mui table > approve and reject in table
