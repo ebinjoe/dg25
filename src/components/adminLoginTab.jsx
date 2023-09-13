@@ -73,12 +73,13 @@ export default function FullWidthTabs() {
 
   const [tableDetails, setTableDetails] = useState([]);
 
-  console.log(tableDetails , "uihiuhgooigoi")
+  console.log(tableDetails, "uihiuhgooigoi");
   const [assignPaper, setAssignPaper] = useState([]);
   const [reviewerEmail, setReviewerDetails] = useState([]);
   const [assigned, setAssigned] = useState({ status: false, value: {} });
   const [evaluatePaper, setEvaluatePaper] = useState([]);
   const [page, setPage] = React.useState(0);
+  const [selectedData, setSelectedData] = useState({});
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -191,8 +192,8 @@ export default function FullWidthTabs() {
       .post(
         `${API_ENDPOINT}/admin/approve`,
         {
-          approved: approval,
-          email: assigned.value.email,
+          status: approval,
+          projectId: selectedData.id,
         },
         myadminheader
       )
@@ -248,10 +249,10 @@ export default function FullWidthTabs() {
             >
               close
             </button>
-            <button className="save" onClick={() => Approval("Approved")}>
-              Accept{" "}
+            <button className="save" onClick={() => Approval("APPROVED")}>
+              APPROVE{" "}
             </button>
-            <button className="reject" onClick={() => Approval("Rejected")}>
+            <button className="reject" onClick={() => Approval("REJECTED")}>
               Reject{" "}
             </button>
           </div>
@@ -304,25 +305,26 @@ export default function FullWidthTabs() {
                           {" "}
                           <button
                             className="view-btn"
-                            onClick={() =>
+                            onClick={() => {
+                              setSelectedData(row);
                               setAssigned((prevState) => ({
                                 ...prevState,
                                 status: true,
                                 value: row,
-                              }))
-                            }
+                              }));
+                            }}
                           >
                             View
                           </button>
                         </TableCell>
                         <TableCell>
                           <li>
-                            {row.approved === "Pending" ? (
-                              <p style={{ color: "orange" }}>Pending</p>
-                            ) : row.approved === "Approved" ? (
-                              <p style={{ color: "Green" }}>Approved</p>
+                            {row.status === "PENDING" ? (
+                              <p style={{ color: "orange" }}>PENDING</p>
+                            ) : row.status === "APPROVED" ? (
+                              <p style={{ color: "Green" }}>APPROVED</p>
                             ) : (
-                              <p style={{ color: "Red" }}>Rejected</p>
+                              <p style={{ color: "Red" }}>REJECTED</p>
                             )}
                           </li>
                         </TableCell>

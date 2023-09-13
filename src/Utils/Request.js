@@ -1,7 +1,7 @@
 export const fetchApi = async (endpoint, body, method) => {
   let auth = localStorage.getItem("token");
 
-  let baseUrl = "http://localhost:3000";
+  let baseUrl = "http://localhost:8090";
   let data = {
     method: method, // or 'PUT'
     headers: {

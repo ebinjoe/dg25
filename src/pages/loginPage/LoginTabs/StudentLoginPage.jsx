@@ -21,6 +21,7 @@ const ReviewLoginPage = () => {
             toast.success("login successful!");
             localStorage.setItem("Student-email", StudentloginEmail);
             localStorage.setItem("Studenttoken", response.data.token);
+            localStorage.setItem("userType", "student");
 
             navigate("/StudentLogin", {
               state: {

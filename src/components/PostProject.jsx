@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { fetchApi } from "../Utils/Request";
 // import * as XLSX from "xlsx";
 import axios from "axios";
+import { API_ENDPOINT } from "../constant/constant";
 import Sidebar from "./sidebar";
 const formDetails = {
   projectTitle: "",
@@ -27,6 +28,16 @@ const PostProject = () => {
   const [errors, setErrors] = useState(false);
   const [items, setItems] = useState([]);
   const [pdfFile, setPdfFile] = useState("");
+  const [studentHeader] = useState({
+    headers: {
+      token: localStorage.getItem("Studenttoken"),
+    },
+  });
+  const [guestHeader] = useState({
+    headers: {
+      token: localStorage.getItem("Usertoken"),
+    },
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,7 +53,7 @@ const PostProject = () => {
     let formData = new FormData();
     formData.append("image", e.target.files[0]);
     let u = await axios.post(
-      `http://localhost:3000/api/upload/image`,
+      `http://localhost:8090/api/upload/image`,
       formData
     );
     if (u.data.status) {
@@ -54,7 +65,7 @@ const PostProject = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log(`handle submit`)
+    console.log(`handle submit`);
     e.preventDefault();
     if (formData.projectTitle == "") {
       notify1("projectTitle is Required");
@@ -69,23 +80,35 @@ const PostProject = () => {
       setErrors(true);
     }
     let userType = localStorage.getItem("userType");
-   console.log(userType)
+    console.log(userType);
     let payload = { ...formData };
     payload.document = pdfFile;
+    console.log(payload);
+    console.log(userType);
     if (userType == "guestUser") {
-      console.log(payload)
-      let response = await fetchApi("/api/add/project", payload, "POST");
-      if (response.status === true) {
-        notify(response.message);
+      console.log(payload);
+      let response = await axios.post(
+        `${API_ENDPOINT}/add/project`,
+        payload,
+        guestHeader
+      );
+
+      if (response.data.status === true) {
+        notify(response.data.message);
       } else {
-        notify1(response.message);
+        notify1(response.data.message);
       }
     } else if (userType == "student") {
-      let response = await fetchApi("/student/add/project", payload, "POST");
-      if (response.status === true) {
-        notify(response.message);
+      let response = await axios.post(
+        `${API_ENDPOINT}/students/add/project`,
+        payload,
+        studentHeader
+      );
+      console.log(response);
+      if (response.data.status === true) {
+        notify(response.data.message);
       } else {
-        notify1(response.message);
+        notify1(response.data.message);
       }
     }
   };

@@ -13,6 +13,7 @@ const UserLoginPage = () => {
       .then(
         (response) => {
           localStorage.setItem("Usertoken", response.data.token);
+          localStorage.setItem("userType", "guestUser");
           if (response.data.status === true) {
             toast.success("login successful!");
             navigate("/UserLogin");
